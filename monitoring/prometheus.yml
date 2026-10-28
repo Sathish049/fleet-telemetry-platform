@@ -1,0 +1,10 @@
+global:
+  scrape_interval: 5s
+
+scrape_configs:
+  - job_name: ingest
+    static_configs: [{ targets: ["ingest:8080"] }]
+  - job_name: writer
+    static_configs: [{ targets: ["writer:9101"] }]
+  - job_name: api
+    static_configs: [{ targets: ["api:8000"] }]
